@@ -1,0 +1,58 @@
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+.score{
+    width: 100%;
+    text-align: center;
+}
+
+body{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.caption{
+    width: 100%;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.wrapper{
+    width: 800px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.field{
+    margin: 8px;
+    background-color:black;
+    border: 2px solid black;
+}
+
+.field__row{
+    background-color:white;
+}
+
+.field__cell{
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
