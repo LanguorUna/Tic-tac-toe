@@ -69,6 +69,60 @@ class Field {
         }
         table.innerHTML = rows;
     }
+
+    isWin(){
+        if(this.checkHorizontal()){
+            return true;
+        }
+        if(this.checkVertical()){
+            return true;
+        }
+        if(this.checkDiagonal()){
+            return true;
+        }
+
+        return false;
+    }
+
+    checkHorizontal(){
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+               if( (this.field[i][j] == this.field[i][j + 1]) && (this.field[i][j] != "")){
+                   if(this.field[i][j] == this.field[i][j + 2]){
+                       return true;
+                   }
+               }
+               break; 
+            }     
+        }
+        return false;
+    }
+
+    checkVertical(){
+        for (let j = 0; j < 3; j++) {
+            for (let i = 0; i < 3; i++) {
+               if( (this.field[i][j] == this.field[i + 1][j]) && (this.field[i][j] != "")){
+                   if(this.field[i][j] == this.field[i + 2][j]){
+                       return true;
+                   }
+               }
+               break; 
+            }     
+        }
+        return false;
+    }
+
+    checkDiagonal(){
+        if((this.field[0][0] == this.field[1][1]) && (this.field[0][0] == this.field[2][2]) && (this.field[0][0] != "")){
+            return true;
+        }
+
+        if((this.field[0][2] == this.field[1][1]) && (this.field[0][2] == this.field[2][0]) && (this.field[0][2] != "")){
+            return true;
+        }
+
+        return false;
+    }
 }
 
 class Game{
@@ -111,6 +165,17 @@ class Game{
             if (this.field.marker(i,j,1)) {
                 this.field.drawStep();
             }
+        }
+
+        if(this.field.isWin()){
+            this.win();
+        }
+    }
+
+    win(){
+        if(this.currentPlayer == 'user'){
+            ++this.scorePlayer;
+            this.score.innerHTML = this.scorePlayer + " - " + this.scoreBot;
         }
     }
 }
