@@ -6,6 +6,7 @@
     width: 100%;
     text-align: center;
     margin: 8px 0;
+    font-size: 20px;
 }
 
 body{
@@ -40,7 +41,7 @@ body{
 }
 
 .game__history{
-    width: 256px;
+    width: 316px;
     height: 300px;
     border: 4px solid black;
     display: flex;
@@ -58,6 +59,14 @@ body{
 
 .game__result__win{
     color:  red;
+}
+
+.game__step{
+    width: 100%;
+    text-align: center;
+    margin: 8px 0 16px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .restart{
